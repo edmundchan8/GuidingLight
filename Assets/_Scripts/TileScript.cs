@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tile : MonoBehaviour 
+public class TileScript : MonoBehaviour 
 {
 	bool m_Lit = false;
 

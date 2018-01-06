@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e583ee981ece74b978168033cafd8f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_TileData: {fileID: 11400000, guid: 4b1622fc1698c4418815ae7431e0868c, type: 2}
 --- !u!4 &1216518430
 Transform:
   m_ObjectHideFlags: 0
@@ -456,7 +457,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 65347ba49ac9644fdae2dbb2c4395aa9, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1911208522 stripped
