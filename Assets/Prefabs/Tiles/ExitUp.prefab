@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4863946726076576}
   - component: {fileID: 212552373056165172}
-  - component: {fileID: 61913386407821426}
-  - component: {fileID: 114530231346791468}
+  - component: {fileID: 61699107712916212}
+  - component: {fileID: 114047776516484438}
   m_Layer: 0
-  m_Name: EntranceUp
-  m_TagString: Entrance
+  m_Name: ExitUp
+  m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61913386407821426
+--- !u!61 &61699107712916212
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.25}
   m_EdgeRadius: 0
---- !u!114 &114530231346791468
+--- !u!114 &114047776516484438
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
