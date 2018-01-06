@@ -16,8 +16,13 @@ public class PlayerController : MonoBehaviour
 			m_Ray = Physics2D.Raycast(localPos, Vector2.down, RAY_DISTANCE);
 			if (m_Ray.collider)
 			{
-				Debug.Log(m_Ray.collider.tag);
-				Debug.Log(m_Ray.transform.position);
+				Tile tile = m_Ray.collider.GetComponent<Tile>();
+				if (!tile.ReturnLit())
+				{
+					Debug.Log(m_Ray.collider.tag);
+					Debug.Log(m_Ray.transform.position);
+					tile.Light();
+				}
 			}
 		}
 	}
