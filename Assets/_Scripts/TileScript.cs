@@ -6,9 +6,9 @@ public class TileScript : MonoBehaviour
 {
 	bool m_Lit = false;
 
-	public void Light()
+	public void Light(bool choice)
 	{
-		m_Lit = true;
+		m_Lit = choice;
 	}
 
 	public bool ReturnLit()

@@ -9,14 +9,16 @@ public class PlayerController : MonoBehaviour
 
 	Vector2 m_MousePos;
 
-	bool m_InPlay = false;
+	bool m_CanLine = false;
+
+	GameObject m_Tile;
 
 	[SerializeField]
 	LineRenderer m_Line;
 
 	void Update()
 	{
-		if (Input.GetMouseButton(0) && !m_InPlay)
+		if (Input.GetMouseButton(0) && m_CanLine)
 		{
 			Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			Vector2 localPos = new Vector2(worldPos.x, worldPos.y);
@@ -25,31 +27,37 @@ public class PlayerController : MonoBehaviour
 			if (m_Ray.collider)
 			{
 				TileScript tile = m_Ray.collider.GetComponent<TileScript>();
+				m_Tile = tile.gameObject;
 				if (!tile.ReturnLit())
 				{
-					Debug.Log("Begin rendering line");
 					Instantiate(m_Line, tile.transform.position, tile.transform.rotation);
-					//line.SetPosition(0, tile.transform.position);
-					tile.Light();
+					tile.Light(true);
 				}
 			}
-
-			//TODO later
-			//if(condition where rules are broken (touching candle too far from last point)) { m_InPlay = true;}
 		}
 		else if (Input.GetMouseButtonUp(0))
 		{
-			InPlayFalse();
+			CanLineTrue();
 		}
 	}
 
-	public void InPlayFalse()
+	public void CanLineTrue()
 	{
-		m_InPlay = false;
+		m_CanLine = true;
+	}
+
+	public void CanLineFalse()
+	{
+		m_CanLine = false;
 	}
 
 	public Vector2 ReturnMousePosition()
 	{
 		return m_MousePos;
+	}
+
+	public GameObject ReturnTile()
+	{
+		return m_Tile;
 	}
 }
