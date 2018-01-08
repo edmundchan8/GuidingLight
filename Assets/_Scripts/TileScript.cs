@@ -15,4 +15,9 @@ public class TileScript : MonoBehaviour
 	{
 		return m_Lit;
 	}
+
+	public Vector2 ReturnTilePos()
+	{
+		return new Vector2(transform.position.x, transform.position.y);
+	}
 }
