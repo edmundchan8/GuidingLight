@@ -7,7 +7,12 @@ public class PlayerController : MonoBehaviour
 	RaycastHit2D m_Ray;
 	float RAY_DISTANCE = 1f;
 
+	Vector2 m_MousePos;
+
 	bool m_InPlay = false;
+
+	[SerializeField]
+	LineRenderer m_Line;
 
 	void Update()
 	{
@@ -15,14 +20,16 @@ public class PlayerController : MonoBehaviour
 		{
 			Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			Vector2 localPos = new Vector2(worldPos.x, worldPos.y);
+			m_MousePos = localPos;
 			m_Ray = Physics2D.Raycast(localPos, Vector2.zero, RAY_DISTANCE);
 			if (m_Ray.collider)
 			{
 				TileScript tile = m_Ray.collider.GetComponent<TileScript>();
 				if (!tile.ReturnLit())
 				{
-					Debug.Log(m_Ray.collider.tag);
-					Debug.Log(m_Ray.transform.position);
+					Debug.Log("Begin rendering line");
+					Instantiate(m_Line, tile.transform.position, tile.transform.rotation);
+					//line.SetPosition(0, tile.transform.position);
 					tile.Light();
 				}
 			}
@@ -39,5 +46,10 @@ public class PlayerController : MonoBehaviour
 	public void InPlayFalse()
 	{
 		m_InPlay = false;
+	}
+
+	public Vector2 ReturnMousePosition()
+	{
+		return m_MousePos;
 	}
 }
