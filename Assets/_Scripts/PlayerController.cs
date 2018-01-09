@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 	Vector2 m_MousePos;
 
 	bool m_CanLine = false;
+	bool m_LineInstantiated = false;
 
 	GameObject m_Tile;
 
@@ -28,10 +29,10 @@ public class PlayerController : MonoBehaviour
 			{
 				TileScript touchingTile = m_Ray.collider.GetComponent<TileScript>();
 				m_Tile = touchingTile.gameObject;
-				if (!touchingTile.ReturnLit())
+				if (touchingTile.ReturnLit() && !m_LineInstantiated)
 				{
+					LineDrawn(true);
 					Instantiate(m_Line, touchingTile.transform.position, touchingTile.transform.rotation);
-					touchingTile.Light(true);
 				}
 			}
 		}
@@ -49,6 +50,11 @@ public class PlayerController : MonoBehaviour
 	public void CanLineFalse()
 	{
 		m_CanLine = false;
+	}
+
+	public void LineDrawn(bool choice)
+	{
+		m_LineInstantiated = choice;
 	}
 
 	public Vector2 ReturnMousePosition()

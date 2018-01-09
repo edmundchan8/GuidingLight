@@ -6,6 +6,14 @@ public class TileScript : MonoBehaviour
 {
 	bool m_Lit = false;
 
+	void Awake()
+	{
+		if (gameObject.tag == "Entrance")
+		{
+			Light(true);
+		}
+	}
+
 	public void Light(bool choice)
 	{
 		m_Lit = choice;
