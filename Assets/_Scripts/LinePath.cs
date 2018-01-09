@@ -17,7 +17,7 @@ public class LinePath : MonoBehaviour
 
 	bool m_CanDraw;
 
-	float m_MaxLength = 1.05f;
+	float m_MaxLength = 1.2f;
 
 	void Awake()
 	{
@@ -39,10 +39,8 @@ public class LinePath : MonoBehaviour
 
 			if (lineX > m_MaxLength || lineY > m_MaxLength || lineX < -m_MaxLength || lineY < -m_MaxLength)
 			{
+				print("Destroy due to length");
 				m_PlayerController.LineDrawn(false);
-				print(lineX);
-				print(m_MaxLength);
-				print("Destroyed");
 				Destroy(gameObject);
 			}
 		}
@@ -51,12 +49,23 @@ public class LinePath : MonoBehaviour
 	IEnumerator OverOtherCandle()
 	{
 		yield return new WaitUntil(() => new Vector2 (m_PlayerController.ReturnTile().transform.position.x, m_PlayerController.ReturnTile().transform.position.y) != m_CurrentTilePos);
-		m_CurrentTile.GetComponent<TileScript>().DisableCollider();
-		m_NextTile = m_PlayerController.ReturnTile();
-		m_NextTile.GetComponent<TileScript>().Light(true);
-		m_PlayerController.LineDrawn(false);
-		m_Line.SetPosition(0, m_NextTile.GetComponent<TileScript>().ReturnTilePos() - m_CurrentTilePos);
-		m_CanDraw = false;
+
+		if (m_PlayerController.ReturnTile().GetComponent<TileScript>().TileCheck(m_CurrentTilePos, m_PlayerController.ReturnTile().GetComponent<TileScript>().ReturnTilePos()))
+		{
+			print("tile check ok");
+			m_CurrentTile.GetComponent<TileScript>().DisableCollider();
+			m_NextTile = m_PlayerController.ReturnTile();
+			m_NextTile.GetComponent<TileScript>().Light(true);
+			m_PlayerController.LineDrawn(false);
+			m_Line.SetPosition(0, m_NextTile.GetComponent<TileScript>().ReturnTilePos() - m_CurrentTilePos);
+			m_CanDraw = false;
+		}
+		else
+		{
+			print("tile check fail");
+			m_PlayerController.LineDrawn(false);
+			Destroy(gameObject);
+		}
 	}
 
 
