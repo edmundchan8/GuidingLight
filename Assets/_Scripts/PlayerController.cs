@@ -26,12 +26,12 @@ public class PlayerController : MonoBehaviour
 			m_Ray = Physics2D.Raycast(localPos, Vector2.zero, RAY_DISTANCE);
 			if (m_Ray.collider)
 			{
-				TileScript tile = m_Ray.collider.GetComponent<TileScript>();
-				m_Tile = tile.gameObject;
-				if (!tile.ReturnLit())
+				TileScript touchingTile = m_Ray.collider.GetComponent<TileScript>();
+				m_Tile = touchingTile.gameObject;
+				if (!touchingTile.ReturnLit())
 				{
-					Instantiate(m_Line, tile.transform.position, tile.transform.rotation);
-					tile.Light(true);
+					Instantiate(m_Line, touchingTile.transform.position, touchingTile.transform.rotation);
+					touchingTile.Light(true);
 				}
 			}
 		}

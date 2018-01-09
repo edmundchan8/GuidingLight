@@ -20,4 +20,9 @@ public class TileScript : MonoBehaviour
 	{
 		return new Vector2(transform.position.x, transform.position.y);
 	}
+
+	public void DisableCollider()
+	{
+		gameObject.GetComponent<BoxCollider2D>().enabled = false;
+	}
 }

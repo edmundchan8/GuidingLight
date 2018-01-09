@@ -35,7 +35,7 @@ public class LinePath : MonoBehaviour
 		//Can only draw a line is the current tile is not lit
 		if (m_CanDraw)
 		{
-			Vector2 linePos = m_PlayerController.ReturnMousePosition() - m_CurrentTilePos;
+			Vector2 linePos = (m_PlayerController.ReturnMousePosition() - m_CurrentTilePos);
 			m_Line.SetPosition(0, linePos);
 			float lineX = m_Line.GetPosition(0).x;
 			float lineY = m_Line.GetPosition(0).y;
@@ -54,9 +54,10 @@ public class LinePath : MonoBehaviour
 	IEnumerator OverOtherCandle()
 	{
 		yield return new WaitUntil(() => new Vector2 (m_PlayerController.ReturnTile().transform.position.x, m_PlayerController.ReturnTile().transform.position.y) != m_CurrentTilePos);
+		m_CurrentTile.GetComponent<TileScript>().DisableCollider();
 		m_NextTile = m_PlayerController.ReturnTile();
 		m_EndTilePos = m_PlayerController.ReturnMousePosition() - m_NextTile.GetComponent<TileScript>().ReturnTilePos();
-		m_Line.SetPosition(1, m_EndTilePos);
+		m_Line.SetPosition(0, m_NextTile.transform.position - m_CurrentTile.transform.position);
 		m_CanDraw = false;
 	}
 
