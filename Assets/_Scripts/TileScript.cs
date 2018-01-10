@@ -6,12 +6,16 @@ public class TileScript : MonoBehaviour
 {
 	bool m_Lit = false;
 
+	[SerializeField]
+	GameObject m_Highlight;
+
 	void Awake()
 	{
 		if (gameObject.tag == "Entrance")
 		{
 			Light(true);
 		}
+		m_Highlight.SetActive(false);
 	}
 
 	public void Light(bool choice)
@@ -32,6 +36,17 @@ public class TileScript : MonoBehaviour
 	public void DisableCollider()
 	{
 		gameObject.GetComponent<BoxCollider2D>().enabled = false;
+	}
+
+	public void OnMouseOver()
+	{
+		m_Highlight.SetActive(true);
+	}
+
+	public void OnMouseExit()
+	{
+		print("mouse left");
+		m_Highlight.SetActive(false);
 	}
 
 	public bool TileCheck(Vector2 currentTile, Vector2 nextTile)
