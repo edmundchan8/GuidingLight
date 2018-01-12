@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bb5b0ec9fe94f518eccff7d7155a25, type: 3}
+  m_Name: Tutorial03Row02
+  m_EditorClassIdentifier: 
+  m_Tiles:
+  - {fileID: 1459302061718086, guid: 65347ba49ac9644fdae2dbb2c4395aa9, type: 2}
+  - {fileID: 1419396344233108, guid: d29925225b9714bb2aae3acf3c82b90f, type: 2}
+  - {fileID: 1074950223349726, guid: 3a57a1f75212f416db143ec47e56e96a, type: 2}

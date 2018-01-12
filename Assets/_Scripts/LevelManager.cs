@@ -27,12 +27,22 @@ public class LevelManager : MonoBehaviour
 		{
 			StartCoroutine("LoadTitle");
 		}
+		else if (ReturnCurrentScene() == 1)
+		{
+			StartCoroutine("StartTutorial");
+		}
 	}
 
 	IEnumerator LoadTitle()
 	{
 		yield return new WaitForSeconds(LOAD_NEXT_SCENE_DURATION);
+		LoadLevel("Title");
+	}
 
+	IEnumerator StartTutorial()
+	{
+		yield return new WaitUntil(() => Input.anyKeyDown);
+		LoadLevel("Tutorial01");
 	}
 
 	public void LoadLevel(string levelName)

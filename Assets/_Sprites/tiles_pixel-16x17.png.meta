@@ -1,24 +1,25 @@
 fileFormatVersion: 2
-guid: 5f47f8dbc25ba4bf0b055018e6a3783d
-timeCreated: 1515130865
+guid: 9890bd75f6f7d42d2aca28714335dc65
+timeCreated: 1515738499
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: tiles_pixel-16x16_0
-    21300002: tiles_pixel-16x16_1
-    21300004: tiles_pixel-16x16_2
-    21300006: tiles_pixel-16x16_3
-    21300008: tiles_pixel-16x16_4
-    21300010: tiles_pixel-16x16_5
-    21300012: tiles_pixel-16x16_6
-    21300014: tiles_pixel-16x16_7
-    21300016: tiles_pixel-16x16_8
-    21300018: tiles_pixel-16x16_9
-    21300020: tiles_pixel-16x16_10
-    21300022: tiles_pixel-16x16_11
-    21300024: tiles_pixel-16x16_12
-    21300026: tiles_pixel-16x16_13
-    21300028: tiles_pixel-16x16_14
+    21300000: tiles_pixel-16x17_0
+    21300002: tiles_pixel-16x17_1
+    21300004: tiles_pixel-16x17_2
+    21300006: tiles_pixel-16x17_3
+    21300008: tiles_pixel-16x17_4
+    21300010: tiles_pixel-16x17_5
+    21300012: tiles_pixel-16x17_6
+    21300014: tiles_pixel-16x17_7
+    21300016: tiles_pixel-16x17_8
+    21300018: tiles_pixel-16x17_9
+    21300020: tiles_pixel-16x17_10
+    21300022: tiles_pixel-16x17_11
+    21300024: tiles_pixel-16x17_12
+    21300026: tiles_pixel-16x17_13
+    21300028: tiles_pixel-16x17_14
+    21300030: tiles_pixel-16x17_15
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -111,7 +112,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tiles_pixel-16x16_0
+      name: tiles_pixel-16x17_0
       rect:
         serializedVersion: 2
         x: 0
@@ -125,7 +126,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: tiles_pixel-16x16_1
+      name: tiles_pixel-16x17_1
       rect:
         serializedVersion: 2
         x: 16
@@ -139,7 +140,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: tiles_pixel-16x16_2
+      name: tiles_pixel-16x17_2
       rect:
         serializedVersion: 2
         x: 32
@@ -153,7 +154,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: tiles_pixel-16x16_3
+      name: tiles_pixel-16x17_3
       rect:
         serializedVersion: 2
         x: 48
@@ -167,7 +168,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: tiles_pixel-16x16_4
+      name: tiles_pixel-16x17_4
       rect:
         serializedVersion: 2
         x: 0
@@ -181,7 +182,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: tiles_pixel-16x16_5
+      name: tiles_pixel-16x17_5
       rect:
         serializedVersion: 2
         x: 16
@@ -195,7 +196,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: tiles_pixel-16x16_6
+      name: tiles_pixel-16x17_6
       rect:
         serializedVersion: 2
         x: 32
@@ -209,7 +210,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: tiles_pixel-16x16_7
+      name: tiles_pixel-16x17_7
       rect:
         serializedVersion: 2
         x: 48
@@ -223,7 +224,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: tiles_pixel-16x16_8
+      name: tiles_pixel-16x17_8
       rect:
         serializedVersion: 2
         x: 0
@@ -237,7 +238,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: tiles_pixel-16x16_9
+      name: tiles_pixel-16x17_9
       rect:
         serializedVersion: 2
         x: 16
@@ -251,7 +252,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: tiles_pixel-16x16_10
+      name: tiles_pixel-16x17_10
       rect:
         serializedVersion: 2
         x: 32
@@ -265,7 +266,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: tiles_pixel-16x16_11
+      name: tiles_pixel-16x17_11
       rect:
         serializedVersion: 2
         x: 48
@@ -279,7 +280,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: tiles_pixel-16x16_12
+      name: tiles_pixel-16x17_12
       rect:
         serializedVersion: 2
         x: 0
@@ -293,7 +294,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: tiles_pixel-16x16_13
+      name: tiles_pixel-16x17_13
       rect:
         serializedVersion: 2
         x: 16
@@ -307,10 +308,24 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: tiles_pixel-16x16_14
+      name: tiles_pixel-16x17_14
       rect:
         serializedVersion: 2
         x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tiles_pixel-16x17_15
+      rect:
+        serializedVersion: 2
+        x: 48
         y: 0
         width: 16
         height: 16

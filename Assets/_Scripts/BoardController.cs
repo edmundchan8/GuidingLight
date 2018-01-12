@@ -20,7 +20,7 @@ public class BoardController : MonoBehaviour
 		{
 			for (int x = 0; x < m_RowData[y].m_Tiles.Length; x++)
 			{
-				GameObject tile = Instantiate(m_RowData[y].m_Tiles[x], transform.position, transform.rotation) as GameObject;
+				GameObject tile = Instantiate(m_RowData[y].m_Tiles[x], transform.position, transform.rotation, gameObject.transform) as GameObject;
 				Vector2 pos = new Vector2(tile.transform.position.x, tile.transform.position.y);
 				pos.x = x;
 				pos.y = y;

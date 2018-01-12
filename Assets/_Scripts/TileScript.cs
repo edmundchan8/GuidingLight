@@ -45,7 +45,6 @@ public class TileScript : MonoBehaviour
 
 	public void OnMouseExit()
 	{
-		print("mouse left");
 		m_Highlight.SetActive(false);
 	}
 

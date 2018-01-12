@@ -39,7 +39,6 @@ public class LinePath : MonoBehaviour
 
 			if (lineX > m_MaxLength || lineY > m_MaxLength || lineX < -m_MaxLength || lineY < -m_MaxLength)
 			{
-				print("Destroy due to length");
 				m_PlayerController.LineDrawn(false);
 				Destroy(gameObject);
 			}
@@ -52,7 +51,6 @@ public class LinePath : MonoBehaviour
 
 		if (m_PlayerController.ReturnTile().GetComponent<TileScript>().TileCheck(m_CurrentTilePos, m_PlayerController.ReturnTile().GetComponent<TileScript>().ReturnTilePos()))
 		{
-			print("tile check ok");
 			m_CurrentTile.GetComponent<TileScript>().DisableCollider();
 			m_NextTile = m_PlayerController.ReturnTile();
 			m_NextTile.GetComponent<TileScript>().Light(true);
@@ -62,7 +60,6 @@ public class LinePath : MonoBehaviour
 		}
 		else
 		{
-			print("tile check fail");
 			m_PlayerController.LineDrawn(false);
 			Destroy(gameObject);
 		}
