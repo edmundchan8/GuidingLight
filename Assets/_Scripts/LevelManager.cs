@@ -36,18 +36,19 @@ public class LevelManager : MonoBehaviour
 	IEnumerator LoadTitle()
 	{
 		yield return new WaitForSeconds(LOAD_NEXT_SCENE_DURATION);
-		LoadLevel("Title");
+		LoadLevelInt(1);
 	}
 
 	IEnumerator StartTutorial()
 	{
 		yield return new WaitUntil(() => Input.anyKeyDown);
-		LoadLevel("Tutorial01");
+		Debug.Log("Using ints to load tutorials");
+		LoadNextLevel();
 	}
 
-	public void LoadLevel(string levelName)
+	public void LoadLevelInt(int buildIndex)
 	{
-		SceneManager.LoadScene(levelName);
+		SceneManager.LoadScene(buildIndex);
 	}
 
 	public void LoadNextLevel()
