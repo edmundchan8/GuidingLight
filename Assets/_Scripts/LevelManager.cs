@@ -53,6 +53,7 @@ public class LevelManager : MonoBehaviour
 
 	public void LoadNextLevel()
 	{
+		GameController.instance.ResetLineCount();
 		Debug.Log("But how do we know this is the last level");
 		SceneManager.LoadScene(ReturnCurrentScene() + 1);
 	}
@@ -60,6 +61,12 @@ public class LevelManager : MonoBehaviour
 	public int ReturnCurrentScene()
 	{
 		return SceneManager.GetActiveScene().buildIndex;
+	}
+
+	public void RestartLevel()
+	{
+		GameController.instance.ResetLineCount();
+		SceneManager.LoadScene(ReturnCurrentScene());
 	}
 
 	/*

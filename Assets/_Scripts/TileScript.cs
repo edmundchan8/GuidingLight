@@ -86,6 +86,7 @@ public class TileScript : MonoBehaviour
 	IEnumerator OnExitLit()
 	{
 		yield return new WaitUntil(() => ReturnLit());
+		GameController.instance.CheckLines();
 		Debug.Log("You Win");
 		yield return new WaitForSeconds(TIME_TILL_NEXT_LEVEL);
 		LevelManager.instance.LoadNextLevel();

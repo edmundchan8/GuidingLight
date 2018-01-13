@@ -6,6 +6,6 @@ public class Restart : MonoBehaviour
 {
 	public void RestartLevel()
 	{
-		LevelManager.instance.LoadLevelInt(LevelManager.instance.ReturnCurrentScene());
+		LevelManager.instance.RestartLevel();
 	}
 }

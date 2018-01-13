@@ -48,11 +48,11 @@ public class LinePath : MonoBehaviour
 	IEnumerator OverOtherCandle()
 	{
 		yield return new WaitUntil(() => new Vector2 (m_PlayerController.ReturnTile().transform.position.x, m_PlayerController.ReturnTile().transform.position.y) != m_CurrentTilePos);
-
 		if (m_PlayerController.ReturnTile().GetComponent<TileScript>().TileCheck(m_CurrentTilePos, m_PlayerController.ReturnTile().GetComponent<TileScript>().ReturnTilePos()))
 		{
 			m_CurrentTile.GetComponent<TileScript>().DisableCollider();
 			m_NextTile = m_PlayerController.ReturnTile();
+			GameController.instance.TrackLineObjects();
 			m_NextTile.GetComponent<TileScript>().Light(true);
 			m_PlayerController.LineDrawn(false);
 			m_Line.SetPosition(0, m_NextTile.GetComponent<TileScript>().ReturnTilePos() - m_CurrentTilePos);
