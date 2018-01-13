@@ -50,6 +50,12 @@ public class LevelManager : MonoBehaviour
 		SceneManager.LoadScene(levelName);
 	}
 
+	public void LoadNextLevel()
+	{
+		Debug.Log("But how do we know this is the last level");
+		SceneManager.LoadScene(ReturnCurrentScene() + 1);
+	}
+
 	public int ReturnCurrentScene()
 	{
 		return SceneManager.GetActiveScene().buildIndex;

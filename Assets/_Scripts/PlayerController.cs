@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour 
 {
 	RaycastHit2D m_Ray;
-	float RAY_DISTANCE = 1f;
+	float RAY_DISTANCE = 0f;
 
 	Vector2 m_MousePos;
 
-	bool m_CanLine = false;
+	bool m_CanLine = true;
 	bool m_LineInstantiated = false;
 
 	GameObject m_Tile;

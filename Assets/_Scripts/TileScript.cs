@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TileScript : MonoBehaviour 
 {
+	float TIME_TILL_NEXT_LEVEL = 3f;
+
 	bool m_Lit = false;
 
 	[SerializeField]
@@ -16,6 +18,10 @@ public class TileScript : MonoBehaviour
 			Light(true);
 		}
 		m_Highlight.SetActive(false);
+		if (gameObject.tag == "Exit")
+		{
+			StartCoroutine("OnExitLit");
+		}
 	}
 
 	public void Light(bool choice)
@@ -75,5 +81,13 @@ public class TileScript : MonoBehaviour
 		{
 			return false;
 		}
+	}
+
+	IEnumerator OnExitLit()
+	{
+		yield return new WaitUntil(() => ReturnLit());
+		Debug.Log("You Win");
+		yield return new WaitForSeconds(TIME_TILL_NEXT_LEVEL);
+		LevelManager.instance.LoadNextLevel();
 	}
 }
