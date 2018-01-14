@@ -52,7 +52,14 @@ public class LinePath : MonoBehaviour
 		{
 			m_CurrentTile.GetComponent<TileScript>().DisableCollider();
 			m_NextTile = m_PlayerController.ReturnTile();
-			GameController.instance.TrackLineObjects();
+			//if line position is not equal to entrance position && 
+			//line positioni s not equal to exit position
+			//add the positions to the list
+			Vector2 linePos = m_Line.transform.position;
+			if(linePos != GameController.instance.ReturnEntrancePos() && linePos != GameController.instance.ReturnExitPos())
+			{
+				GameController.instance.AddList((int)linePos.x, (int)linePos.y);
+			}
 			m_NextTile.GetComponent<TileScript>().Light(true);
 			m_PlayerController.LineDrawn(false);
 			m_Line.SetPosition(0, m_NextTile.GetComponent<TileScript>().ReturnTilePos() - m_CurrentTilePos);

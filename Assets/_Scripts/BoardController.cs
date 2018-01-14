@@ -6,6 +6,9 @@ public class BoardController : MonoBehaviour
 {
 	public RowData[] m_RowData;
 
+	Vector2 m_EntrancePos;
+	Vector2 m_ExitPos;
+
 	void Start()
 	{
 		CreateBoard();
@@ -22,7 +25,18 @@ public class BoardController : MonoBehaviour
 				pos.x = x;
 				pos.y = y;
 				tile.transform.position = pos;
+				if (tile.tag == "Entrance")
+				{
+					m_EntrancePos = pos;
+				}
+				else if (tile.tag == "Exit")
+				{
+					m_ExitPos = pos;
+				}
 			}
 		}
+		GameController.instance.TrackEntranceExitPos(m_EntrancePos, m_ExitPos);
 	}
+
+
 }
