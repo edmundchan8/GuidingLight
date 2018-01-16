@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64cf21e16d15d474b9066de9784318a5, type: 3}
-  m_Name: Tutorial01WinLose
+  m_Name: Tutorial04WinLose
   m_EditorClassIdentifier: 
-  m_MaxLineRow: 08000000
-  m_MaxLineColumn: 080000000100000008000000
+  m_MaxLineRow: 08000000030000000800000008000000
+  m_MaxLineColumn: 08000000080000000800000003000000
