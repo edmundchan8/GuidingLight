@@ -12,6 +12,10 @@ public class GameController : MonoBehaviour
 	Vector2 m_EntrancePos;
 	Vector2 m_ExitPos;
 
+	public WinLoseData m_WinLoseData;
+
+	bool m_Win = false;
+
 	void Awake()
 	{
 		if (!instance)
@@ -92,7 +96,16 @@ public class GameController : MonoBehaviour
 			{
 				if (m_XPosDictionary.ContainsKey(x))
 				{
-					Debug.Log("When X = " + x + " , you have crossed it " + m_XPosDictionary[x] + " times.");
+					Debug.Log(m_XPosDictionary[x] + " " + m_WinLoseData.m_MaxLineColumn[x]);
+					if (m_XPosDictionary[x] > m_WinLoseData.m_MaxLineColumn[x])
+					{
+						LevelWin(false);
+						return;
+					}
+					else
+					{
+						LevelWin(true);
+					}
 				}
 			}
 		}
@@ -106,7 +119,16 @@ public class GameController : MonoBehaviour
 			{
 				if (m_YPosDictionary.ContainsKey(y))
 				{
-					Debug.Log("When Y = " + y + " , you have crossed it " + m_YPosDictionary[y] + " times.");
+					if (m_YPosDictionary[y] > m_WinLoseData.m_MaxLineRow[y])
+					{
+						LevelWin(false);
+						return;
+					}
+					else
+					{
+						LevelWin(true);
+					}
+
 				}
 			}
 		}
@@ -114,5 +136,15 @@ public class GameController : MonoBehaviour
 		{
 			return;
 		}
+	}
+
+	void LevelWin(bool answer)
+	{
+		m_Win = answer;
+	}
+
+	public bool ReturnResult()
+	{
+		return m_Win;
 	}
 }
