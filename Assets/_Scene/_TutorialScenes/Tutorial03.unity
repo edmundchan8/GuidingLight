@@ -310,6 +310,12 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 181.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114810216818556554, guid: 241a2c0e50358412fb035e6ccb1acee9,
+        type: 2}
+      propertyPath: m_WinLoseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 79ca7ce5bb3f54b8cbbfb6510f7c3d1e,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 241a2c0e50358412fb035e6ccb1acee9, type: 2}
   m_IsPrefabParent: 0
