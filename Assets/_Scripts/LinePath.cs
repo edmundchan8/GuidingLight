@@ -21,6 +21,7 @@ public class LinePath : MonoBehaviour
 
 	void Awake()
 	{
+		
 		m_PlayerController = FindObjectOfType<PlayerController>();
 		m_CurrentTile = m_PlayerController.ReturnTile();
 		m_CurrentTilePos = new Vector2(m_CurrentTile.transform.position.x, m_CurrentTile.transform.position.y);
@@ -40,6 +41,7 @@ public class LinePath : MonoBehaviour
 			if (lineX > m_MaxLength || lineY > m_MaxLength || lineX < -m_MaxLength || lineY < -m_MaxLength)
 			{
 				m_PlayerController.LineDrawn(false);
+				m_PlayerController.PopLineFromStack();
 				Destroy(gameObject);
 			}
 		}

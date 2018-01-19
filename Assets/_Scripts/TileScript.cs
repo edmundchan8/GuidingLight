@@ -6,7 +6,7 @@ public class TileScript : MonoBehaviour
 {
 	float TIME_TILL_NEXT_LEVEL = 3f;
 
-	bool m_Lit = false;
+	public bool m_Lit = false;
 
 	[SerializeField]
 	GameObject m_Highlight;
@@ -42,6 +42,11 @@ public class TileScript : MonoBehaviour
 	public void DisableCollider()
 	{
 		gameObject.GetComponent<BoxCollider2D>().enabled = false;
+	}
+
+	public void ReenableCollider()
+	{
+		gameObject.GetComponent<BoxCollider2D>().enabled = true;
 	}
 
 	public void OnMouseOver()

@@ -17,8 +17,27 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	LineRenderer m_Line;
 
+	Stack<LineRenderer> m_LineStack = new Stack<LineRenderer>();
+	Stack<GameObject> m_TileStack = new Stack<GameObject>();
+
 	void Update()
 	{
+		if (Input.GetKeyUp(KeyCode.Space) && m_LineStack.Count > 1)
+		{
+			LineDrawn(false);
+			if (m_LineStack.Count < m_TileStack.Count)
+			{
+				GameObject tempTile = m_TileStack.Pop();
+				tempTile.GetComponent<TileScript>().Light(false);
+				GameObject previousTile = m_TileStack.Pop();
+				previousTile.GetComponent<TileScript>().ReenableCollider();
+			}
+			Debug.Log(m_LineStack.Count);
+			LineRenderer line = m_LineStack.Pop();
+			Destroy(line.gameObject);
+			Debug.Log(m_LineStack.Count);
+		}
+
 		if (Input.GetMouseButton(0) && m_CanLine)
 		{
 			Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -32,7 +51,12 @@ public class PlayerController : MonoBehaviour
 				if (touchingTile.ReturnLit() && !m_LineInstantiated)
 				{
 					LineDrawn(true);
-					Instantiate(m_Line, touchingTile.transform.position, touchingTile.transform.rotation);
+					LineRenderer line = Instantiate(m_Line, touchingTile.transform.position, touchingTile.transform.rotation, gameObject.transform) as LineRenderer;
+					m_LineStack.Push(line);
+					if (m_TileStack.Count < 1 || m_TileStack.Peek() != m_Tile)
+					{
+						m_TileStack.Push(m_Tile);
+					}
 				}
 			}
 		}
@@ -65,5 +89,10 @@ public class PlayerController : MonoBehaviour
 	public GameObject ReturnTile()
 	{
 		return m_Tile;
+	}
+
+	public void PopLineFromStack()
+	{
+		m_LineStack.Pop();
 	}
 }
