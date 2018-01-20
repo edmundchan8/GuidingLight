@@ -31,11 +31,10 @@ public class PlayerController : MonoBehaviour
 				tempTile.GetComponent<TileScript>().Light(false);
 				GameObject previousTile = m_TileStack.Pop();
 				previousTile.GetComponent<TileScript>().ReenableCollider();
+				m_TileStack.Push(previousTile);
 			}
-			Debug.Log(m_LineStack.Count);
 			LineRenderer line = m_LineStack.Pop();
 			Destroy(line.gameObject);
-			Debug.Log(m_LineStack.Count);
 		}
 
 		if (Input.GetMouseButton(0) && m_CanLine)

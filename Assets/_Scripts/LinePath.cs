@@ -40,9 +40,7 @@ public class LinePath : MonoBehaviour
 
 			if (lineX > m_MaxLength || lineY > m_MaxLength || lineX < -m_MaxLength || lineY < -m_MaxLength)
 			{
-				m_PlayerController.LineDrawn(false);
-				m_PlayerController.PopLineFromStack();
-				Destroy(gameObject);
+				DestroyLine();
 			}
 		}
 	}
@@ -74,5 +72,11 @@ public class LinePath : MonoBehaviour
 		}
 	}
 
+	public void DestroyLine()
+	{
+		m_PlayerController.LineDrawn(false);
+		m_PlayerController.PopLineFromStack();
+		Destroy(gameObject);
+	}
 
 }
