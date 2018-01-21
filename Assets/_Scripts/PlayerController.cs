@@ -22,21 +22,6 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
-		if (Input.GetKeyUp(KeyCode.Space) && m_LineStack.Count > 1)
-		{
-			LineDrawn(false);
-			if (m_LineStack.Count < m_TileStack.Count)
-			{
-				GameObject tempTile = m_TileStack.Pop();
-				tempTile.GetComponent<TileScript>().Light(false);
-				GameObject previousTile = m_TileStack.Pop();
-				previousTile.GetComponent<TileScript>().ReenableCollider();
-				m_TileStack.Push(previousTile);
-			}
-			LineRenderer line = m_LineStack.Pop();
-			Destroy(line.gameObject);
-		}
-
 		if (Input.GetMouseButton(0) && m_CanLine)
 		{
 			Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -47,7 +32,7 @@ public class PlayerController : MonoBehaviour
 			{
 				TileScript touchingTile = m_Ray.collider.GetComponent<TileScript>();
 				m_Tile = touchingTile.gameObject;
-				if (touchingTile.ReturnLit() && !m_LineInstantiated)
+				if (touchingTile.ReturnLit() && !m_LineInstantiated && touchingTile.tag != "Exit")
 				{
 					LineDrawn(true);
 					LineRenderer line = Instantiate(m_Line, touchingTile.transform.position, touchingTile.transform.rotation, gameObject.transform) as LineRenderer;
@@ -93,5 +78,23 @@ public class PlayerController : MonoBehaviour
 	public void PopLineFromStack()
 	{
 		m_LineStack.Pop();
+	}
+
+	public void UndoLine()
+	{
+		if(m_LineStack.Count > 1)
+		{
+			LineDrawn(false);
+			if (m_LineStack.Count < m_TileStack.Count)
+			{
+				GameObject tempTile = m_TileStack.Pop();
+				tempTile.GetComponent<TileScript>().Light(false);
+				GameObject previousTile = m_TileStack.Pop();
+				previousTile.GetComponent<TileScript>().ReenableCollider();
+				m_TileStack.Push(previousTile);
+			}
+			LineRenderer line = m_LineStack.Pop();
+			Destroy(line.gameObject);
+		}
 	}
 }
