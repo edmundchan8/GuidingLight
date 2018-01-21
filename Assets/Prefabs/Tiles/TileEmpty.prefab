@@ -156,8 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cacefedcf4a3d485689378dc8655c058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Lit: 0
   m_Highlight: {fileID: 1978376327725362}
+  m_CandleAnimationSprite: {fileID: 1027997750607904}
 --- !u!212 &212071274815234608
 SpriteRenderer:
   m_ObjectHideFlags: 1

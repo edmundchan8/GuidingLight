@@ -6,10 +6,13 @@ public class TileScript : MonoBehaviour
 {
 	float TIME_TILL_NEXT_LEVEL = 3f;
 
-	public bool m_Lit = false;
+	bool m_Lit = false;
 
 	[SerializeField]
 	GameObject m_Highlight;
+
+	[SerializeField]
+	GameObject m_CandleAnimationSprite;
 
 	void Awake()
 	{
@@ -22,11 +25,23 @@ public class TileScript : MonoBehaviour
 		{
 			StartCoroutine("OnExitLit");
 		}
+		if (!m_Lit)
+		{
+			DisableCandleAnimationSprite();
+		}
 	}
 
 	public void Light(bool choice)
 	{
 		m_Lit = choice;
+		if (m_Lit)
+		{
+			ReenableCandleAnimationSprite();
+		}
+		else
+		{
+			DisableCandleAnimationSprite();
+		}
 	}
 
 	public bool ReturnLit()
@@ -47,6 +62,16 @@ public class TileScript : MonoBehaviour
 	public void ReenableCollider()
 	{
 		gameObject.GetComponent<BoxCollider2D>().enabled = true;
+	}
+
+	public void DisableCandleAnimationSprite()
+	{
+		m_CandleAnimationSprite.SetActive(false);
+	}
+
+	public void ReenableCandleAnimationSprite()
+	{
+		m_CandleAnimationSprite.SetActive(true);
 	}
 
 	public void OnMouseOver()
