@@ -13,6 +13,9 @@ public class UndoScript : MonoBehaviour
 	}
 	public void OnClick()
 	{
-		m_PlayerController.UndoLine();
+		if (!GameController.instance.ReturnWin())
+		{
+			m_PlayerController.UndoLine();
+		}
 	}
 }

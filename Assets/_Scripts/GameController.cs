@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
 
 	public WinLoseData m_WinLoseData;
 
+	float TIME_TILL_NEXT_LEVEL = 3f;
+
 	bool m_Win = false;
 
 	void Awake()
@@ -99,12 +101,12 @@ public class GameController : MonoBehaviour
 					Debug.Log(m_XPosDictionary[x] + " " + m_WinLoseData.m_MaxLineColumn[x]);
 					if (m_XPosDictionary[x] > m_WinLoseData.m_MaxLineColumn[x])
 					{
-						LevelWin(false);
+						Lose();
 						return;
 					}
 					else
 					{
-						LevelWin(true);
+						Win();
 					}
 				}
 			}
@@ -121,12 +123,12 @@ public class GameController : MonoBehaviour
 				{
 					if (m_YPosDictionary[y] > m_WinLoseData.m_MaxLineRow[y])
 					{
-						LevelWin(false);
+						Lose();
 						return;
 					}
 					else
 					{
-						LevelWin(true);
+						Win();
 					}
 
 				}
@@ -137,14 +139,27 @@ public class GameController : MonoBehaviour
 			return;
 		}
 	}
-
-	void LevelWin(bool answer)
+	void Win()
 	{
-		m_Win = answer;
+		Debug.Log("You Win");
+		m_Win = true;
+		StartCoroutine("NextLevel");
 	}
 
-	public bool ReturnResult()
+	void Lose()
+	{
+		Debug.Log("You lose");
+	}
+
+	public bool ReturnWin()
 	{
 		return m_Win;
+	}
+
+	IEnumerator NextLevel()
+	{
+		yield return new WaitForSeconds(TIME_TILL_NEXT_LEVEL);
+
+		LevelManager.instance.LoadNextLevel();
 	}
 }

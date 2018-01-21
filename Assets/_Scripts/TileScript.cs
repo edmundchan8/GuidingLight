@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class TileScript : MonoBehaviour 
 {
-	float TIME_TILL_NEXT_LEVEL = 3f;
-
 	bool m_Lit = false;
 
 	[SerializeField]
@@ -117,15 +115,5 @@ public class TileScript : MonoBehaviour
 	{
 		yield return new WaitUntil(() => ReturnLit());
 		GameController.instance.CheckLines();
-		if (GameController.instance.ReturnResult())
-		{
-			Debug.Log("You Win");
-			yield return new WaitForSeconds(TIME_TILL_NEXT_LEVEL);
-			LevelManager.instance.LoadNextLevel();
-		}
-		else
-		{
-			Debug.Log("You lose");
-		}
 	}
 }
