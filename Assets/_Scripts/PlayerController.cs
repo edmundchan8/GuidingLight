@@ -82,7 +82,6 @@ public class PlayerController : MonoBehaviour
 
 	public void UndoLine()
 	{
-		Debug.Log(m_TileStack.Peek());
 		if(m_LineStack.Count > 1)
 		{
 			LineDrawn(false);
