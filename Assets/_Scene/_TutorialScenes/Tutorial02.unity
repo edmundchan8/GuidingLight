@@ -122,7 +122,7 @@ Prefab:
     - target: {fileID: 114373187224931614, guid: 2935c6a932d1e4f5689df3da3ef6c01f,
         type: 2}
       propertyPath: m_RowData.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4419234974116108, guid: 2935c6a932d1e4f5689df3da3ef6c01f, type: 2}
       propertyPath: m_LocalPosition.x
@@ -160,11 +160,17 @@ Prefab:
         type: 2}
       propertyPath: m_RowData.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 772ca1be584b44d148319b8147df4f81,
+      objectReference: {fileID: 11400000, guid: 537a9967fd14748adb37e4cb0b8a03e0,
         type: 2}
     - target: {fileID: 114373187224931614, guid: 2935c6a932d1e4f5689df3da3ef6c01f,
         type: 2}
       propertyPath: m_RowData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 772ca1be584b44d148319b8147df4f81,
+        type: 2}
+    - target: {fileID: 114373187224931614, guid: 2935c6a932d1e4f5689df3da3ef6c01f,
+        type: 2}
+      propertyPath: m_RowData.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: 82ac073f8c7b64a3eb20558fc8947dce,
         type: 2}
