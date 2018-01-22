@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Tutorial04Row04
   m_EditorClassIdentifier: 
   m_Tiles:
+  - {fileID: 1965990499127452, guid: e9d5696a9f2ac4f79a329a0716d150ad, type: 2}
   - {fileID: 1965990499127452, guid: ffe73900f9bef4331a148aa64062bc73, type: 2}
   - {fileID: 1965990499127452, guid: ffe73900f9bef4331a148aa64062bc73, type: 2}
   - {fileID: 1965990499127452, guid: ffe73900f9bef4331a148aa64062bc73, type: 2}
