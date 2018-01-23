@@ -67,8 +67,7 @@ public class LinePath : MonoBehaviour
 		}
 		else
 		{
-			m_PlayerController.LineDrawn(false);
-			Destroy(gameObject);
+			DestroyLine();
 		}
 	}
 
