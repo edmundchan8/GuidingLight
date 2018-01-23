@@ -122,7 +122,7 @@ Prefab:
     - target: {fileID: 114373187224931614, guid: 2935c6a932d1e4f5689df3da3ef6c01f,
         type: 2}
       propertyPath: m_RowData.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4419234974116108, guid: 2935c6a932d1e4f5689df3da3ef6c01f, type: 2}
       propertyPath: m_LocalPosition.x
@@ -160,31 +160,25 @@ Prefab:
         type: 2}
       propertyPath: m_RowData.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: fdf33ca96c2ef491c9a99a5aaa975467,
+      objectReference: {fileID: 11400000, guid: 059b50a7084294a8d9322d59b27c5b9f,
         type: 2}
     - target: {fileID: 114373187224931614, guid: 2935c6a932d1e4f5689df3da3ef6c01f,
         type: 2}
       propertyPath: m_RowData.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: b9aa03870fc2f436c9117b876964c42a,
+      objectReference: {fileID: 11400000, guid: cf3f0af9d8f074fe1902e98f6139d936,
         type: 2}
     - target: {fileID: 114373187224931614, guid: 2935c6a932d1e4f5689df3da3ef6c01f,
         type: 2}
       propertyPath: m_RowData.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: db0d9ddf3239d41528029a6ecc3bb36d,
+      objectReference: {fileID: 11400000, guid: 5fe9f5de4bf7e428fa4fd602ab18efcd,
         type: 2}
     - target: {fileID: 114373187224931614, guid: 2935c6a932d1e4f5689df3da3ef6c01f,
         type: 2}
       propertyPath: m_RowData.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: beedaa8359bb54b9aba554f788b07fb2,
-        type: 2}
-    - target: {fileID: 114373187224931614, guid: 2935c6a932d1e4f5689df3da3ef6c01f,
-        type: 2}
-      propertyPath: m_RowData.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: f5bab40a974a54d74a9d3e499e7d8ea7,
+      objectReference: {fileID: 11400000, guid: b5b355a6d7dcd4a8fb9b27afd22296bc,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2935c6a932d1e4f5689df3da3ef6c01f, type: 2}
@@ -368,7 +362,7 @@ Prefab:
         type: 2}
       propertyPath: m_WinLoseData
       value: 
-      objectReference: {fileID: 11400000, guid: 73abad46b050848fe8ec86e41c72a043,
+      objectReference: {fileID: 11400000, guid: 889065a198858457a975a41148a14df5,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7fa876bf596034579af7557e7219004e, type: 2}

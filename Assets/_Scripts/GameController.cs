@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
 	float TIME_TILL_NEXT_LEVEL = 3f;
 
 	bool m_Win = false;
+	bool m_XPass = false;
+	bool m_YPass = false;
 
 	void Awake()
 	{
@@ -106,7 +108,7 @@ public class GameController : MonoBehaviour
 					}
 					else
 					{
-						Win();
+						m_XPass = true;
 					}
 				}
 			}
@@ -128,6 +130,7 @@ public class GameController : MonoBehaviour
 					}
 					else
 					{
+						m_YPass = true;
 						Win();
 					}
 
@@ -141,9 +144,12 @@ public class GameController : MonoBehaviour
 	}
 	void Win()
 	{
-		Debug.Log("You Win");
-		m_Win = true;
-		StartCoroutine("NextLevel");
+		if (m_XPass && m_YPass)
+		{
+			Debug.Log("You Win");
+			m_Win = true;
+			StartCoroutine("NextLevel");
+		}
 	}
 
 	void Lose()
