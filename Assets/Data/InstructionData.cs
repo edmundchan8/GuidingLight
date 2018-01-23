@@ -1,16 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class InstructionData : MonoBehaviour {
+[CreateAssetMenu]
+public class InstructionData : ScriptableObject 
+{
+	public Sprite[] m_SpriteArray;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public Sprite LoadSprite(int element)
+	{
+		return m_SpriteArray[element];
 	}
 }
