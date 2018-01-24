@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 	bool m_CanLine = true;
 	bool m_LineInstantiated = false;
 
+	public WinLoseData m_WinLoseData;
+
 	GameObject m_Tile;
 
 	[SerializeField]
@@ -82,7 +84,7 @@ public class PlayerController : MonoBehaviour
 
 	public void UndoLine()
 	{
-		if(m_LineStack.Count > 1)
+		if(m_LineStack.Count > 1 && !m_WinLoseData.ReturnLevelFinished())
 		{
 			LineDrawn(false);
 			if (m_LineStack.Count < m_TileStack.Count)

@@ -93,6 +93,7 @@ public class GameController : MonoBehaviour
 	public void Reset()
 	{
 		ClearList();
+		m_WinLoseData.SetLevelFinished(false);
 	}
 
 	public void TrackEntranceExitPos(Vector2 entrance, Vector2 exit)
@@ -120,22 +121,16 @@ public class GameController : MonoBehaviour
 			{
 				if (m_XPosDictionary.ContainsKey(x))
 				{
-					Debug.Log(m_XPosDictionary[x] + " " + m_WinLoseData.m_MaxLineColumn[x]);
 					if (m_XPosDictionary[x] > m_WinLoseData.m_MaxLineColumn[x])
 					{
-						Lose();
 						return;
 					}
-					else
-					{
-						m_XPass = true;
-					}
+				}
+				else
+				{
+					m_XPass = true;
 				}
 			}
-		}
-		else
-		{
-			return;
 		}
 		if (m_YPosDictionary.Count > 0)
 		{
@@ -145,24 +140,18 @@ public class GameController : MonoBehaviour
 				{
 					if (m_YPosDictionary[y] > m_WinLoseData.m_MaxLineRow[y])
 					{
-						Lose();
 						return;
 					}
-					else
-					{
-						m_YPass = true;
-						Win();
-					}
-
+				}
+				else
+				{
+					m_YPass = true;
 				}
 			}
 		}
-		else
-		{
-			return;
-		}
+		CheckWin();
 	}
-	void Win()
+	void CheckWin()
 	{
 		if (m_XPass && m_YPass)
 		{

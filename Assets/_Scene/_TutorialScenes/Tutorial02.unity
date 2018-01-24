@@ -216,6 +216,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114821251293565416, guid: 3231580a2e9e94a8a8c76ce9e418373c,
+        type: 2}
+      propertyPath: m_WinLoseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 6c147b56e39ca4d6596a02a1c513bd4e,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3231580a2e9e94a8a8c76ce9e418373c, type: 2}
   m_IsPrefabParent: 0
