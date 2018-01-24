@@ -70,6 +70,26 @@ public class GameController : MonoBehaviour
 		}
 	}
 
+	//TODO: We need a way to remove the m_XPosDictionary key and m_YPosDictionarykey whenever we undo a line specifically.
+	//At the moment, our game is does not take into account when we that we can undo lines.
+	//So as its saving the x and y positions into dictionaries when a line is linked to a candle, when a line is undone, it doesn't remove the last position.
+	//1) Obtain the element 0 of the line we are undoing.
+	//2) create a remove from dictionary method, that takes in the x and y positions
+	//3) Remove them from the dictionary
+
+	public void RemoveList(int x, int y)
+	{
+		int xValue = m_XPosDictionary[x];
+		m_XPosDictionary.Remove(x);
+		xValue--;
+		m_XPosDictionary.Add(x, xValue);
+		int yValue = m_YPosDictionary[y];
+		m_YPosDictionary.Remove(y);
+		yValue--;
+		m_YPosDictionary.Add(y, yValue);
+	}
+
+
 	public void Reset()
 	{
 		ClearList();

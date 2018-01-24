@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
 				m_TileStack.Push(previousTile);
 			}
 			LineRenderer line = m_LineStack.Pop();
+			GameController.instance.RemoveList((int)line.transform.position.x, (int)line.transform.position.y);
 			Destroy(line.gameObject);
 		}
 	}
