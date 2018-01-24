@@ -79,14 +79,20 @@ public class GameController : MonoBehaviour
 
 	public void RemoveList(int x, int y)
 	{
-		int xValue = m_XPosDictionary[x];
-		m_XPosDictionary.Remove(x);
-		xValue--;
-		m_XPosDictionary.Add(x, xValue);
-		int yValue = m_YPosDictionary[y];
-		m_YPosDictionary.Remove(y);
-		yValue--;
-		m_YPosDictionary.Add(y, yValue);
+		if (m_XPosDictionary.ContainsKey(x))
+		{
+			int xValue = m_XPosDictionary[x];
+			m_XPosDictionary.Remove(x);
+			xValue--;
+			m_XPosDictionary.Add(x, xValue);
+		}
+		if (m_YPosDictionary.ContainsKey(y))
+		{
+			int yValue = m_YPosDictionary[y];
+			m_YPosDictionary.Remove(y);
+			yValue--;
+			m_YPosDictionary.Add(y, yValue);
+		}
 	}
 
 
