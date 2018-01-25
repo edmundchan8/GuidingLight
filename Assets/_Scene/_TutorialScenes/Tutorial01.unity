@@ -260,7 +260,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3231580a2e9e94a8a8c76ce9e418373c, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &488713121
+--- !u!1001 &438308124
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -344,13 +344,19 @@ Prefab:
     - target: {fileID: 224071276012044398, guid: 241a2c0e50358412fb035e6ccb1acee9,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 322.5
+      value: 258.5
       objectReference: {fileID: 0}
     - target: {fileID: 224071276012044398, guid: 241a2c0e50358412fb035e6ccb1acee9,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 181.5
+      value: 145.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114810216818556554, guid: 241a2c0e50358412fb035e6ccb1acee9,
+        type: 2}
+      propertyPath: m_WinLoseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 932fa077c52db4ac094fcb320303b167,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 241a2c0e50358412fb035e6ccb1acee9, type: 2}
   m_IsPrefabParent: 0

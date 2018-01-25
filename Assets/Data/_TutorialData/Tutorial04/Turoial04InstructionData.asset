@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b6294dd80da24da4a9a14c41ce423d0, type: 3}
+  m_Name: Turoial04InstructionData
+  m_EditorClassIdentifier: 
+  m_SpriteArray:
+  - {fileID: 21300000, guid: 676d46905a4e0471a833a0a2e66f701d, type: 3}
+  - {fileID: 21300000, guid: a637e52ae4ad14fb1a9ed8dd8e4b3d0e, type: 3}
+  - {fileID: 21300000, guid: 5f87374fc664343f196833b06c744d6e, type: 3}
+  - {fileID: 21300000, guid: 55525fa43d5484f7aa98c033b4009591, type: 3}
