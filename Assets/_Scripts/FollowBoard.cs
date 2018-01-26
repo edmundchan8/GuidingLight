@@ -15,5 +15,4 @@ public class FollowBoard : MonoBehaviour
 
 		transform.position = new Vector3(xPos, yPos, transform.position.z);
 	}
-
 }
