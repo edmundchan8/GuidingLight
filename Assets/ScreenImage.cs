@@ -7,13 +7,14 @@ public class ScreenImage : MonoBehaviour
 {
 	[SerializeField]
 	ScreenImageData m_ScreenImageData;
+	Transform m_BackgroundImage;
 	Image m_Image;
-
 	float DISABLE_DURATION = 3f;
 
 	void Start () 
 	{
-		m_Image = GetComponent<Image>();
+		m_BackgroundImage = gameObject.transform.GetChild(0);	
+		m_Image = m_BackgroundImage.transform.GetChild(0).GetComponent<Image>();
 		m_Image.sprite = m_ScreenImageData.m_ScreenSpriteArray[0];
 		StartCoroutine("DisableImage");
 	}
@@ -32,13 +33,13 @@ public class ScreenImage : MonoBehaviour
 
 	void EnableThenDisableImage()
 	{
-		m_Image.enabled = true;
+		m_BackgroundImage.gameObject.SetActive(true);
 		StartCoroutine("DisableImage");
 	}
 
 	IEnumerator DisableImage()
 	{
 		yield return new WaitForSeconds(DISABLE_DURATION);
-		m_Image.enabled  = false;
+		m_BackgroundImage.gameObject.SetActive(false);
 	}
 }
