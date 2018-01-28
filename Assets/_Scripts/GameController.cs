@@ -20,6 +20,8 @@ public class GameController : MonoBehaviour
 	bool m_XPass = false;
 	bool m_YPass = false;
 
+	bool m_LevelClear = false;
+
 	void Awake()
 	{
 		if (!instance)
@@ -100,6 +102,8 @@ public class GameController : MonoBehaviour
 	{
 		ClearList();
 		m_WinLoseData.SetLevelFinished(false);
+		m_Win = false;
+		m_LevelClear = false;
 	}
 
 	public void TrackEntranceExitPos(Vector2 entrance, Vector2 exit)
@@ -163,6 +167,7 @@ public class GameController : MonoBehaviour
 	}
 	void CheckWin()
 	{
+		m_LevelClear = true;
 		if (m_XPass && m_YPass)
 		{
 			Debug.Log("You Win");
@@ -183,6 +188,11 @@ public class GameController : MonoBehaviour
 	public bool ReturnWin()
 	{
 		return m_Win;
+	}
+
+	public bool ReturnLevelClear()
+	{
+		return m_LevelClear;
 	}
 
 	IEnumerator NextLevel()

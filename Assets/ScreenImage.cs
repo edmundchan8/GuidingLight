@@ -46,8 +46,15 @@ public class ScreenImage : MonoBehaviour
 
 	IEnumerator LevelFinished()
 	{
-		yield return new WaitUntil(() => GameController.instance.ReturnWin());
-		EnableThenDisableImage();
+		yield return new WaitUntil(() => GameController.instance.ReturnLevelClear());
+		if (!GameController.instance.ReturnWin())
+		{
+			OnLose();
+		}
+		else if (GameController.instance.ReturnWin())
+		{
+			OnWin();
+		}
 		Debug.Log("Level Finished");
 	}
 }
