@@ -33,11 +33,12 @@ public class Player : MonoBehaviour
 	//read each line position and debug it out
 	void ReadUsingStack()
 	{
+		transform.position = new Vector2(transform.position.x + m_UsingStack.Peek().transform.position.x, transform.position.y + m_UsingStack.Peek().transform.position.y);
 		for (int i = 0; i <= m_UsingStack.Count; i++)
 		{
 			LineRenderer line = m_UsingStack.Pop();
 			Vector2 pos = line.GetComponent<LineRenderer>().GetPosition(0);
-			Debug.Log(pos);
+			transform.position = new Vector2(transform.position.x + pos.x, transform.position.y + pos.y);
 		}
 	}
 }
