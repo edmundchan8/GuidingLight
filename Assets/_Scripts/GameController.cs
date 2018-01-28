@@ -129,6 +129,8 @@ public class GameController : MonoBehaviour
 				{
 					if (m_XPosDictionary[x] > m_WinLoseData.m_MaxLineColumn[x])
 					{
+						m_XPass = false;
+						CheckWin();
 						return;
 					}
 				}
@@ -146,6 +148,8 @@ public class GameController : MonoBehaviour
 				{
 					if (m_YPosDictionary[y] > m_WinLoseData.m_MaxLineRow[y])
 					{
+						m_YPass = false;
+						CheckWin();
 						return;
 					}
 				}
@@ -164,6 +168,10 @@ public class GameController : MonoBehaviour
 			Debug.Log("You Win");
 			m_Win = true;
 			StartCoroutine("NextLevel");
+		}
+		else if (!m_XPass || !m_YPass)
+		{
+			Lose();
 		}
 	}
 

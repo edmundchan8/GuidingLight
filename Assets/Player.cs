@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
 				if (m_UsingStack.Count <= 0)
 				{
 					m_CanMove = false;
+					GameController.instance.CheckLines();
 					return;
 				}
 				else if (m_MoveTimer.HasCompleted())
