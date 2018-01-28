@@ -17,6 +17,7 @@ public class ScreenImage : MonoBehaviour
 		m_Image = m_BackgroundImage.transform.GetChild(0).GetComponent<Image>();
 		m_Image.sprite = m_ScreenImageData.m_ScreenSpriteArray[0];
 		StartCoroutine("DisableImage");
+		StartCoroutine("LevelFinished");
 	}
 
 	public void OnWin()
@@ -41,5 +42,12 @@ public class ScreenImage : MonoBehaviour
 	{
 		yield return new WaitForSeconds(DISABLE_DURATION);
 		m_BackgroundImage.gameObject.SetActive(false);
+	}
+
+	IEnumerator LevelFinished()
+	{
+		yield return new WaitUntil(() => GameController.instance.ReturnWin());
+		EnableThenDisableImage();
+		Debug.Log("Level Finished");
 	}
 }
