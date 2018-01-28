@@ -52,7 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12432a98df6554850a5ebb21a45733b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlayerController: {fileID: 0}
+  m_PlayerController: {fileID: 114821251293565416, guid: 3231580a2e9e94a8a8c76ce9e418373c,
+    type: 2}
   m_Line: {fileID: 120441336796245452}
 --- !u!120 &120441336796245452
 LineRenderer:

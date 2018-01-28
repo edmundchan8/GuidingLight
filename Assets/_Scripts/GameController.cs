@@ -163,7 +163,6 @@ public class GameController : MonoBehaviour
 		{
 			Debug.Log("You Win");
 			m_Win = true;
-			//TODO: DShould next level be here?
 			StartCoroutine("NextLevel");
 		}
 	}

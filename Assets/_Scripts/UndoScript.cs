@@ -9,6 +9,8 @@ public class UndoScript : MonoBehaviour
 
 	void Start()
 	{
+		//Later, have an empty gameobject that has a dictionary of gameobjects
+		//Then whenever you need access to a gameobject, just choose from the dictionary.
 		m_PlayerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
 	}
 	public void OnClick()
