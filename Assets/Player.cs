@@ -8,12 +8,47 @@ public class Player : MonoBehaviour
 
 	Stack<LineRenderer> m_ObtainedStack = new Stack<LineRenderer>();
 	Stack<LineRenderer> m_UsingStack = new Stack<LineRenderer>();
-	//Obtain LineStack from PlayerController
+
+	bool m_CanMove = false;
+
+	Timer m_MoveTimer = new Timer();
+
+	float MOVE_DURATION = 0.5f;
+
+	Vector3 m_StartPos;
+	Vector3 m_EndPos;
+
 	void Awake()
 	{
 		m_PlayerController = GameObject.Find("PlayerController").GetComponent<PlayerController>();
 	}
 		
+	void FixedUpdate()
+	{
+		m_MoveTimer.Update(Time.deltaTime);
+		if (m_CanMove)
+		{
+			float moveTime = (MOVE_DURATION - m_MoveTimer.GetTime()) / MOVE_DURATION;
+			transform.position = Vector3.Lerp(m_StartPos, m_EndPos, moveTime);
+			if (transform.position == m_EndPos)
+			{
+				if (m_UsingStack.Count <= 0)
+				{
+					m_CanMove = false;
+					return;
+				}
+				else if (m_MoveTimer.HasCompleted())
+				{
+					m_StartPos = transform.position;
+					Vector2 endPos = m_UsingStack.Pop().GetPosition(0);
+					m_EndPos = new Vector3(m_StartPos.x + endPos.x, m_StartPos.y + endPos.y, 0);
+					m_MoveTimer.SetTime(MOVE_DURATION);
+				}
+			}
+		}
+
+	}
+
 	//reverse objects in line stack
 	public void GetLineStack()
 	{
@@ -23,9 +58,13 @@ public class Player : MonoBehaviour
 
 	void ReverseLineStack()
 	{
-		for (int i = 0; i <= m_ObtainedStack.Count; i++)
+		int stackLength = m_ObtainedStack.Count;
+		for (int i = 0; i <= stackLength; i++)
 		{
-			m_UsingStack.Push(m_ObtainedStack.Pop());
+			if (m_ObtainedStack.Count > 0)
+			{
+				m_UsingStack.Push(m_ObtainedStack.Pop());
+			}
 		}
 		ReadUsingStack();
 	}
@@ -33,12 +72,10 @@ public class Player : MonoBehaviour
 	//read each line position and debug it out
 	void ReadUsingStack()
 	{
-		transform.position = new Vector2(transform.position.x + m_UsingStack.Peek().transform.position.x, transform.position.y + m_UsingStack.Peek().transform.position.y);
-		for (int i = 0; i <= m_UsingStack.Count; i++)
-		{
-			LineRenderer line = m_UsingStack.Pop();
-			Vector2 pos = line.GetComponent<LineRenderer>().GetPosition(0);
-			transform.position = new Vector2(transform.position.x + pos.x, transform.position.y + pos.y);
-		}
+		Vector2 endPos = m_UsingStack.Peek().GetPosition(0);
+		m_MoveTimer.SetTime(MOVE_DURATION);
+		m_StartPos = transform.position;
+		m_EndPos = new Vector3(m_StartPos.x + endPos.x, m_StartPos.y + endPos.y, 0);
+		m_CanMove = true;
 	}
 }
