@@ -23,7 +23,6 @@ public class LinePath : MonoBehaviour
 	{
 		
 		m_PlayerController = FindObjectOfType<PlayerController>();
-		Debug.Log(m_PlayerController);
 		m_CurrentTile = m_PlayerController.ReturnTile();
 		m_CurrentTilePos = new Vector2(m_CurrentTile.transform.position.x, m_CurrentTile.transform.position.y);
 		m_CanDraw = true;
@@ -78,5 +77,4 @@ public class LinePath : MonoBehaviour
 		m_PlayerController.PopLineFromStack();
 		Destroy(gameObject);
 	}
-
 }

@@ -12,6 +12,8 @@ public class TileScript : MonoBehaviour
 	[SerializeField]
 	GameObject m_CandleAnimationSprite;
 
+	Player m_Player;
+
 	void Awake()
 	{
 		if (gameObject.tag == "Entrance")
@@ -21,6 +23,7 @@ public class TileScript : MonoBehaviour
 		m_Highlight.SetActive(false);
 		if (gameObject.tag == "Exit")
 		{
+			m_Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 			StartCoroutine("OnExitLit");
 		}
 		if (!m_Lit)
@@ -114,6 +117,8 @@ public class TileScript : MonoBehaviour
 	IEnumerator OnExitLit()
 	{
 		yield return new WaitUntil(() => ReturnLit());
-		GameController.instance.CheckLines();
+		m_Player.GetLineStack();
+		//TODO: This will be called once player reaches last tile now.
+		//GameController.instance.CheckLines();
 	}
 }

@@ -100,4 +100,9 @@ public class PlayerController : MonoBehaviour
 			Destroy(line.gameObject);
 		}
 	}
+
+	public Stack<LineRenderer> ReturnLineStack()
+	{
+		return m_LineStack;
+	}
 }
