@@ -10,11 +10,16 @@ public class ScreenImage : MonoBehaviour
 	Transform m_BackgroundImage;
 	Image m_Image;
 	float DISABLE_DURATION = 3f;
+	GameObject m_RestartButton;
+	GameObject m_TitleButton;
 
 	void Start () 
 	{
 		m_BackgroundImage = gameObject.transform.GetChild(0);	
 		m_Image = m_BackgroundImage.transform.GetChild(0).GetComponent<Image>();
+		FindButton();
+		m_TitleButton.SetActive(false);
+		m_RestartButton.SetActive(false);
 		m_Image.sprite = m_ScreenImageData.m_ScreenSpriteArray[0];
 		StartCoroutine("DisableImage");
 		StartCoroutine("LevelFinished");
@@ -22,20 +27,21 @@ public class ScreenImage : MonoBehaviour
 
 	public void OnWin()
 	{
-		EnableThenDisableImage();
+		EnableImage();
 		m_Image.sprite = m_ScreenImageData.m_ScreenSpriteArray[1];
 	}
 
 	public void OnLose()
 	{
-		EnableThenDisableImage();
+		EnableImage();
+		m_RestartButton.gameObject.SetActive(true);
+		m_TitleButton.gameObject.SetActive(true);
 		m_Image.sprite = m_ScreenImageData.m_ScreenSpriteArray[2];
 	}
 
-	void EnableThenDisableImage()
+	void EnableImage()
 	{
 		m_BackgroundImage.gameObject.SetActive(true);
-		StartCoroutine("DisableImage");
 	}
 
 	IEnumerator DisableImage()
@@ -56,5 +62,11 @@ public class ScreenImage : MonoBehaviour
 			OnWin();
 		}
 		Debug.Log("Level Finished");
+	}
+
+	void FindButton()
+	{
+		m_RestartButton = GameObject.FindGameObjectWithTag("RestartOnLose");
+		m_TitleButton = GameObject.FindGameObjectWithTag("TitleButton");
 	}
 }
