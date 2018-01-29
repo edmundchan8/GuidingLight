@@ -12,6 +12,9 @@ public class TileScript : MonoBehaviour
 	[SerializeField]
 	GameObject m_CandleAnimationSprite;
 
+	[SerializeField]
+	GameObject m_Glow;
+
 	Player m_Player;
 
 	void Awake()
@@ -68,11 +71,13 @@ public class TileScript : MonoBehaviour
 	public void DisableCandleAnimationSprite()
 	{
 		m_CandleAnimationSprite.SetActive(false);
+		m_Glow.SetActive(false);
 	}
 
 	public void ReenableCandleAnimationSprite()
 	{
 		m_CandleAnimationSprite.SetActive(true);
+		m_Glow.SetActive(true);
 	}
 
 	public void OnMouseOver()
