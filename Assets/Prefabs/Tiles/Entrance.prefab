@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4130770819663680}
   - component: {fileID: 212095950341467250}
+  - component: {fileID: 95088075306936012}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -158,6 +159,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.14, y: 0.4}
   m_EdgeRadius: 0
+--- !u!95 &95088075306936012
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1635895457646854}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d10bbc3d77937483dad22370cff33873, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95823783335776586
 Animator:
   serializedVersion: 3
@@ -224,7 +242,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 7a23998792b6a49aea7b890c49a06272, type: 3}
-  m_Color: {r: 0.94929016, g: 1, b: 0.08088237, a: 0.278}
+  m_Color: {r: 0.94929016, g: 1, b: 0.08088237, a: 0.072}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
