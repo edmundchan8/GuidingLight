@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
 
 	Vector2 m_EntrancePos;
 	Vector2 m_ExitPos;
+	Vector2 m_StairPos;
 
 	public WinLoseData m_WinLoseData;
 
@@ -106,11 +107,12 @@ public class GameController : MonoBehaviour
 		m_LevelClear = false;
 	}
 
-	public void TrackEntranceExitPos(Vector2 entrance, Vector2 exit)
+	public void TrackEntranceExitStairPos(Vector2 entrance, Vector2 exit, Vector2 stairs)
 	{
 		//Track entrance and exit pos from BoardController
 		m_EntrancePos = entrance;
 		m_ExitPos = exit;
+		m_StairPos = stairs;
 	}
 
 	public Vector2 ReturnEntrancePos()
@@ -121,6 +123,11 @@ public class GameController : MonoBehaviour
 	public Vector2 ReturnExitPos()
 	{
 		return m_ExitPos;
+	}
+
+	public Vector2 ReturnStairPos()
+	{
+		return m_StairPos;
 	}
 
 	public void CheckLines()

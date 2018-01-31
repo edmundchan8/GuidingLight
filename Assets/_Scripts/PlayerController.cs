@@ -9,10 +9,16 @@ public class PlayerController : MonoBehaviour
 
 	Vector2 m_MousePos;
 
+
 	bool m_CanLine = true;
 	bool m_LineInstantiated = false;
 
 	public WinLoseData m_WinLoseData;
+
+	[SerializeField]
+	GameObject m_Player;
+
+	GameObject player;
 
 	GameObject m_Tile;
 
@@ -21,6 +27,12 @@ public class PlayerController : MonoBehaviour
 
 	Stack<LineRenderer> m_LineStack = new Stack<LineRenderer>();
 	Stack<GameObject> m_TileStack = new Stack<GameObject>();
+
+	void Start()
+	{
+		player = Instantiate(m_Player, transform.position, transform.rotation);
+		player.transform.position = GameController.instance.ReturnStairPos();
+	}
 
 	void Update()
 	{

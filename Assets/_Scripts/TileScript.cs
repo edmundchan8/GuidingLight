@@ -17,7 +17,7 @@ public class TileScript : MonoBehaviour
 
 	Player m_Player;
 
-	void Awake()
+	void Start()
 	{
 		if (gameObject.tag == "Entrance")
 		{

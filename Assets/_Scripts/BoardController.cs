@@ -8,8 +8,9 @@ public class BoardController : MonoBehaviour
 
 	Vector2 m_EntrancePos;
 	Vector2 m_ExitPos;
+	Vector2 m_StairPos;
 
-	void Start()
+	void Awake()
 	{
 		CreateBoard();
 	}
@@ -33,9 +34,13 @@ public class BoardController : MonoBehaviour
 				{
 					m_ExitPos = pos;
 				}
+				else if (tile.tag == "Stairs")
+				{
+					m_StairPos = pos;
+				}
 			}
 		}
-		GameController.instance.TrackEntranceExitPos(m_EntrancePos, m_ExitPos);
+		GameController.instance.TrackEntranceExitStairPos(m_EntrancePos, m_ExitPos, m_StairPos);
 	}
 
 

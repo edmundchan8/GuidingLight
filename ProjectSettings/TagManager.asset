@@ -10,6 +10,7 @@ TagManager:
   - RestartButton
   - TitleButton
   - RestartOnLose
+  - Stairs
   layers:
   - Default
   - TransparentFX
