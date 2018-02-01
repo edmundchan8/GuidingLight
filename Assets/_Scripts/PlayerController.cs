@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
 	Stack<LineRenderer> m_LineStack = new Stack<LineRenderer>();
 	Stack<GameObject> m_TileStack = new Stack<GameObject>();
 
-	void Start()
+	void Awake()
 	{
 		player = Instantiate(m_Player, transform.position, transform.rotation);
 		player.transform.position = GameController.instance.ReturnStairPos();

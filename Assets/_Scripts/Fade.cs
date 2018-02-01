@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Fade : MonoBehaviour 
 {
-	float m_Timer;
+	float m_FadeInTimer;
 	[SerializeField]
 	float m_FadeDuration;
 
@@ -23,13 +23,21 @@ public class Fade : MonoBehaviour
 
 	void Update()
 	{
-		if(m_Timer < m_FadeDuration)
+		if(m_FadeInTimer < m_FadeDuration)
 		{
-			m_Timer += Time.fixedDeltaTime;
+			m_FadeInTimer += Time.fixedDeltaTime;
 			Color color = m_Sprite.GetComponent<SpriteRenderer>().color;
-			float alpha = m_Timer / m_FadeDuration;
+			float alpha = m_FadeInTimer / m_FadeDuration;
 			color.a = alpha;
 			m_Sprite.GetComponent<SpriteRenderer>().color = color;
+		}
+
+		if (GameController.instance.ReturnLevelClear())
+		{
+			if (m_Sprite.color.a > 0f)
+			{
+				m_Sprite.color = Color.Lerp(m_Sprite.color, Color.clear, m_FadeDuration * Time.deltaTime);
+			}
 		}
 	}
 }
