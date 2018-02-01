@@ -9,7 +9,7 @@ public class ScreenImage : MonoBehaviour
 	ScreenImageData m_ScreenImageData;
 	Transform m_BackgroundImage;
 	Image m_Image;
-	float DISABLE_DURATION = 3f;
+	float DISABLE_DURATION = 2f;
 	GameObject m_RestartButton;
 	GameObject m_TitleButton;
 
