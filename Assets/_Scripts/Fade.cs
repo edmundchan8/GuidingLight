@@ -32,7 +32,7 @@ public class Fade : MonoBehaviour
 			m_Sprite.GetComponent<SpriteRenderer>().color = color;
 		}
 
-		if (GameController.instance.ReturnLevelClear())
+		if (GameController.instance.ReturnLevelClear() && GameController.instance.ReturnWin())
 		{
 			if (m_Sprite.color.a > 0f)
 			{

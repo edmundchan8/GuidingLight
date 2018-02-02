@@ -31,6 +31,10 @@ public class PlayerController : MonoBehaviour
 	void Awake()
 	{
 		player = Instantiate(m_Player, transform.position, transform.rotation);
+	}
+
+	void Start()
+	{
 		player.transform.position = GameController.instance.ReturnStairPos();
 	}
 
