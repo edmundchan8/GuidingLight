@@ -15,6 +15,9 @@ public class TileScript : MonoBehaviour
 	[SerializeField]
 	GameObject m_Glow;
 
+	GameObject m_Exit;
+	GameObject m_Door;
+
 	Player m_Player;
 
 	void Start()
@@ -27,7 +30,11 @@ public class TileScript : MonoBehaviour
 		if (gameObject.tag == "Exit")
 		{
 			m_Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+			m_Door = GameObject.FindGameObjectWithTag("Door");
+			m_Exit = this.gameObject;
+			m_Exit.GetComponent<SpriteRenderer>().enabled = false;
 			StartCoroutine("OnExitLit");
+			StartCoroutine("OnLevelEndExitTile");
 		}
 		if (!m_Lit)
 		{
@@ -116,6 +123,16 @@ public class TileScript : MonoBehaviour
 		else
 		{
 			return false;
+		}
+	}
+
+	IEnumerator OnLevelEndExitTile()
+	{
+		yield return new WaitUntil(() => GameController.instance.ReturnWin());
+		if (GameController.instance.ReturnWin())
+		{
+			m_Exit.GetComponent<SpriteRenderer>().enabled = true;
+			m_Door.GetComponent<SpriteRenderer>().enabled = false;
 		}
 	}
 
