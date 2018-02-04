@@ -67,16 +67,20 @@ public class Player : MonoBehaviour
 				m_UsingStack.Push(m_ObtainedStack.Pop());
 			}
 		}
-		ReadUsingStack();
+		SetFirstStartEndPos();
 	}
 
 	//read each line position and debug it out
-	void ReadUsingStack()
+	void SetFirstStartEndPos()
 	{
-		Vector2 endPos = m_UsingStack.Peek().GetPosition(0);
-		m_MoveTimer.SetTime(MOVE_DURATION);
-		m_StartPos = transform.position;
-		m_EndPos = new Vector3(m_StartPos.x + endPos.x, m_StartPos.y + endPos.y, 0);
-		m_CanMove = true;
+		if (!m_CanMove)
+		{
+			GameObject startObj = GameObject.FindGameObjectWithTag("Entrance");
+			Vector2 endPos = new Vector2(startObj.transform.position.x, startObj.transform.position.y);
+			m_MoveTimer.SetTime(MOVE_DURATION);
+			m_StartPos = transform.position;
+			m_EndPos = endPos;
+			m_CanMove = true;
+		}
 	}
 }
