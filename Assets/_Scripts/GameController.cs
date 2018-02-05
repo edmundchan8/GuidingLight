@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour
 
 	bool m_LevelClear = false;
 
+	int MAX_FOR_LOOP_VALUE = 10;
+
 	void Awake()
 	{
 		if (!instance)
@@ -43,6 +45,7 @@ public class GameController : MonoBehaviour
 
 	public void AddList(int x, int y)
 	{
+		print(x);
 		if (!m_XPosDictionary.ContainsKey(x))
 		{
 			m_XPosDictionary.Add(x, 1);
@@ -134,7 +137,9 @@ public class GameController : MonoBehaviour
 	{
 		if (m_XPosDictionary.Count > 0)
 		{
-			for (int x = 0; x <= m_XPosDictionary.Count; x++)
+			//for Level 2, the x values are 3, 4 and 5
+			//but this for loop only starts from 0 and goes to 3, never reaching 4 or 5
+			for (int x = 0; x <= MAX_FOR_LOOP_VALUE; x++)
 			{
 				if (m_XPosDictionary.ContainsKey(x))
 				{
@@ -153,7 +158,7 @@ public class GameController : MonoBehaviour
 		}
 		if (m_YPosDictionary.Count > 0)
 		{
-			for (int y = 0; y <= m_YPosDictionary.Count; y++)
+			for (int y = 0; y <= MAX_FOR_LOOP_VALUE; y++)
 			{
 				if (m_YPosDictionary.ContainsKey(y))
 				{

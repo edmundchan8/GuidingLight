@@ -11,5 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64cf21e16d15d474b9066de9784318a5, type: 3}
   m_Name: Tutorial03WinLose
   m_EditorClassIdentifier: 
-  m_MaxLineRow: 0800000008000000
+  m_MaxLineRow: 08000000080000000800000008000000
   m_MaxLineColumn: 080000000800000008000000
+  m_LevelFinished: 0

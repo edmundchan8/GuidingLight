@@ -13,3 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MaxLineRow: 08000000
   m_MaxLineColumn: 080000000100000008000000
+  m_LevelFinished: 0
