@@ -45,7 +45,6 @@ public class GameController : MonoBehaviour
 
 	public void AddList(int x, int y)
 	{
-		print(x);
 		if (!m_XPosDictionary.ContainsKey(x))
 		{
 			m_XPosDictionary.Add(x, 1);

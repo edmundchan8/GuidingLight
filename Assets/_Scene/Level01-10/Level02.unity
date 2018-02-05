@@ -232,7 +232,7 @@ Prefab:
         type: 2}
       propertyPath: m_WinLoseData
       value: 
-      objectReference: {fileID: 11400000, guid: 889065a198858457a975a41148a14df5,
+      objectReference: {fileID: 11400000, guid: 243568f40366743c692a88c920a0198d,
         type: 2}
     - target: {fileID: 114821251293565416, guid: 3231580a2e9e94a8a8c76ce9e418373c,
         type: 2}

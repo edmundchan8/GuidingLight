@@ -15,6 +15,11 @@ public class BoardController : MonoBehaviour
 		CreateBoard();
 	}
 
+	void Start()
+	{
+		GameController.instance.TrackEntranceExitStairPos(m_EntrancePos, m_ExitPos, m_StairPos);
+	}
+
 	public void CreateBoard()
 	{
 		for (int y = 0; y < m_RowData.Length; y++)
@@ -40,8 +45,5 @@ public class BoardController : MonoBehaviour
 				}
 			}
 		}
-		GameController.instance.TrackEntranceExitStairPos(m_EntrancePos, m_ExitPos, m_StairPos);
 	}
-
-
 }

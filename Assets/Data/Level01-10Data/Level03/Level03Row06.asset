@@ -9,13 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15bb5b0ec9fe94f518eccff7d7155a25, type: 3}
-  m_Name: Level01Row03
+  m_Name: Level03Row06
   m_EditorClassIdentifier: 
   m_Tiles:
-  - {fileID: 1585302289705304, guid: 252ba911a7207441aa29443ae889a282, type: 2}
   - {fileID: 1965990499127452, guid: ffe73900f9bef4331a148aa64062bc73, type: 2}
   - {fileID: 1965990499127452, guid: ffe73900f9bef4331a148aa64062bc73, type: 2}
-  - {fileID: 1875308722775990, guid: f3c73e8a7f38d401380477d26dbd600b, type: 2}
-  - {fileID: 1363049322048634, guid: d962dba9a860447b8a4ab094df651248, type: 2}
-  - {fileID: 1363049322048634, guid: d962dba9a860447b8a4ab094df651248, type: 2}
+  - {fileID: 1965990499127452, guid: ffe73900f9bef4331a148aa64062bc73, type: 2}
+  - {fileID: 1965990499127452, guid: ffe73900f9bef4331a148aa64062bc73, type: 2}
   - {fileID: 1792593233415672, guid: d4498ee0c3d0d40cc951840955bf612a, type: 2}

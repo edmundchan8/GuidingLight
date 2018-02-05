@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	GameObject m_Player;
 
-	GameObject player;
+	GameObject m_Instantiated_Player;
 
 	GameObject m_Tile;
 
@@ -30,12 +30,8 @@ public class PlayerController : MonoBehaviour
 
 	void Awake()
 	{
-		player = Instantiate(m_Player, transform.position, transform.rotation);
-	}
-
-	void Start()
-	{
-		player.transform.position = GameController.instance.ReturnStairPos();
+		m_Instantiated_Player = Instantiate(m_Player, transform.position, transform.rotation);
+		StartCoroutine("SetStartPlayerPos");
 	}
 
 	void Update()
@@ -120,5 +116,11 @@ public class PlayerController : MonoBehaviour
 	public Stack<LineRenderer> ReturnLineStack()
 	{
 		return m_LineStack;
+	}
+
+	IEnumerator SetStartPlayerPos()
+	{
+		yield return new WaitForSeconds(0.1f);
+		m_Instantiated_Player.transform.position = GameController.instance.ReturnStairPos();
 	}
 }
